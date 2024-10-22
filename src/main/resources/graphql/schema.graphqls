@@ -1,0 +1,33 @@
+type Flight {
+    idFlight: ID!
+    origin: String!
+    destination: String!
+    flightClass: FlightClass
+    flightCode: String
+    departureDate: String
+    arrivalDate: String
+    departureTime: String
+    arrivalTime: String
+    price: Int
+    durationFormat: String
+    totalPrice: Float
+
+}
+
+type FlightClass {
+    idFlightClass: ID!
+    flightClassName: String
+    luggageAmount: Int
+    extraPrice: Int
+}
+
+type Query {
+    findFlightById(id: ID!):Flight
+    findFlightsByOrigin(origin: String!):[Flight]
+    findFlightsByDestination(destination: String!):[Flight]
+}
+
+
+
+
+
